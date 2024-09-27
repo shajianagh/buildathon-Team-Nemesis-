@@ -60,9 +60,10 @@
 </head>
 <body>
     <center><h1>Safe House Inventory System</h1></center>
-    <form method="post" onsubmit="return validateForm()">
+    
+    <form action="/add" method="post" onsubmit="return validateForm()">
         <input type="text" name="name" placeholder="Enter safehouse name" required>
-        <input type="number" name="capacity" placeholder="Enter accomodation available" min="0" required>
+        <input type="number" name="capacity" placeholder="Enter accommodation available" min="0" required>
         <input type="number" name="food" placeholder="Enter food portions" min="0" required>
         <input type="number" name="drugs" placeholder="Enter medicine doses" min="0" required>
         <button type="submit">Update Safehouse</button>
@@ -88,12 +89,36 @@
         {% endfor %}
     </table>
 
+    <h2>Assistance Requests</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Emergency Type</th>
+            <th>Date Submitted</th>
+        </tr>
+        {% for request in requests %}
+            <tr>
+                <td>{{ request[0] }}</td>
+                <td>{{ request[1] }}</td>
+                <td>{{ request[2] }}</td>
+                <td>{{ request[3] }}</td>
+                <td>{{ request[4] }}</td>
+                <td>{{ request[5] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
     <script>
         function validateForm() {
+            // Get all number inputs
             const capacity = document.querySelector('input[name="capacity"]').value;
             const food = document.querySelector('input[name="food"]').value;
             const drugs = document.querySelector('input[name="drugs"]').value;
-          
+
+            // Validate that all number inputs are greater than zero
             if (capacity < 0 || food < 0 || drugs < 0) {
                 alert("Capacity, Food Portions, and Drug Doses cannot be negative.");
                 return false;
