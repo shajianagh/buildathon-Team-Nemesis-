@@ -12,8 +12,6 @@ def get_db_connection():
         )
     return conn
 
-
-
 @app.route('/')
 def index():
     conn = get_db_connection()
@@ -76,3 +74,4 @@ def delete(safehouses_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
