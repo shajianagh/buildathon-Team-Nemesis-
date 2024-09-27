@@ -12,17 +12,22 @@ def get_db_connection():
         )
     return conn
 
+
 @app.route('/')
 def index():
     conn = get_db_connection()
     cur = conn.cursor()
 
     cur.execute('SELECT * FROM safehouses;')
-    items = cur.fetchall()  
+    safehouses = cur.fetchall()  
+
+    cur.execute('SELECT * FROM assistance_requests;')
+    assistance_requests = cur.fetchall()
 
     cur.close()
     conn.close()
-    return render_template('index.html', items=items)
+
+    return render_template('index.html', items=safehouses, requests=assistance_requests)
 
 
 @app.route('/add', methods=['POST'])
@@ -74,4 +79,5 @@ def delete(safehouses_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
