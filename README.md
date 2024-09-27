@@ -1,6 +1,6 @@
 ![image](IMG-20240925-WA0030.jpg)
 
-# {Management System of Safe Houses and Hospitals in Emergency Situations} - BUILDATHON
+# Management System of Safe Houses and Hospitals in Emergency Situations - BUILDATHON
 This project aims to design and develop an integrated system for managing safe houses and healthcare facilities during disaster scenarios. Safe houses, designated as emergency shelters providing food and shelter, will be networked with hospitals to ensure coordinated medical support. The system will have the following core features:
 
   **1. Interoperability between Safe Houses and Hospitals:**
