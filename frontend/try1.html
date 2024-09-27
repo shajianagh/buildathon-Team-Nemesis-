@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="try1.css">
+    <title>Safe House and Hospital Management System</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Safe House Management</h1>
+            <ul class="nav-links">
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hotlines">Emergency Hotlines</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Emergency Response System</h2>
+            <p>Your safety is our priority. Please fill out the form below for assistance.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Request Assistance</h2>
+        <form id="assistanceForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required>
+
+            <label for="emergencyType">Select Emergency Type:</label>
+            <select id="emergencyType" required>
+                <option value="naturalDisaster">Natural Disaster</option>
+                <option value="medicalServices">Medical Services</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div id="naturalDisasterOptions" class="hidden">
+                <label>Choose Resources Needed:</label>
+                <label><input type="checkbox" value="medicine"> Medicine</label>
+                <label><input type="checkbox" value="food"> Food</label>
+                <label><input type="checkbox" value="shelter"> Shelter</label>
+            </div>
+
+            <div id="medicalServicesOptions" class="hidden">
+                <label>Do you require medical services?</label>
+                <label><input type="checkbox" value="yes"> Yes</label>
+                <label><input type="checkbox" value="no"> No</label>
+            </div>
+
+            <div id="otherOptions" class="hidden">
+                <label for="otherMessage">Please provide details:</label>
+                <textarea id="otherMessage" placeholder="Your message..." required></textarea>
+            </div>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <section class="hotlines" id="hotlines">
+        <h2>Emergency Hotlines</h2>
+        <ul>
+            <li>Police: 100</li>
+            <li>Fire Department: 101</li>
+            <li>Ambulance: 102</li>
+            <li>Disaster Response: 112</li>
+        </ul>
+    </section>
+
+    <section class="faqs" id="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>What should I do in case of a natural disaster?</strong><br>Stay calm, seek shelter, and follow emergency guidelines.</li>
+            <li><strong>How do I reach a safe house?</strong><br>Use the emergency hotline or the system to find the nearest location.</li>
+            <li><strong>What services are provided at safe houses?</strong><br>Safe houses offer food, shelter, medical assistance, and support during emergencies.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Safe House Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="try1.js"></script>
+</body>
+</html>
