@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Assistance</title>
+    
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+            margin: 0;
+            padding: 0;
+            background-color: #e7f3f0;
+            color: #333;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #17a2b8;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            position: relative; /* Needed for absolute positioning */
+        }
+
+        nav {
+            position: absolute; /* Absolute positioning */
+            top: 20px; /* Aligns with header padding */
+            right: 20px; /* Aligns to the right */
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Flexbox for horizontal alignment */
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f8f9fa;
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            color: #17a2b8;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact input, 
+        .contact select, 
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+
+        .contact input:focus, 
+        .contact select:focus, 
+        .contact textarea:focus {
+            border-color: #17a2b8;
+        }
+
+        .contact button {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #138496;
+        }
+
+        /* Emergency Hotlines Section Styles */
+        .hotlines, .faqs {
+            padding: 40px 20px;
+            background-color: #d1ecf1;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotlines h2, .faqs h2 {
+            color: #17a2b8;
+        }
+
+        /* FAQ Styles */
+        .faqs ul, .hotlines ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .faqs li, .hotlines li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Hidden class for displaying options */
+        .hidden {
+            display: none;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column; /* Stack links vertically on smaller screens */
+                align-items: flex-end; /* Align links to the right */
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .contact, .hotlines, .faqs {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Request Assistance</h1>
+        <nav>
+            <ul class="nav-links"> <!-- Updated class -->
+                <li><a href="/">Home</a></li>
+                <li><a href="#hotlines">Emergency Hotlines</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact"> <!-- Updated class -->
+        <h2>Please fill out the form below for assistance:</h2>
+        <form method="POST" action="/request_assistance">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="emergencyType">Select Emergency Type:</label>
+            <select id="emergencyType" name="emergencyType" required>
+                <option value="naturalDisaster">Natural Disaster</option>
+                <option value="medicalServices">Medical Services</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div id="naturalDisasterOptions" class="hidden">
+                <label>Choose Resources Needed:</label>
+                <label><input type="checkbox" name="resources" value="food"> Food</label>
+                <label><input type="checkbox" name="resources" value="shelter"> Shelter</label>
+            </div>
+
+            <div id="medicalServicesOptions" class="hidden">
+                <label>Do you require medical services?</label>
+                <label><input type="checkbox" name="resources" value="medicine"> Yes</label>
+            </div>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <section id="hotlines" class="hotlines"> <!-- Updated class -->
+        <h2>Emergency Hotlines</h2>
+        <ul>
+            <li>Police: 100</li>
+            <li>Fire Department: 101</li>
+            <li>Ambulance: 102</li>
+            <li>Disaster Response: 112</li>
+        </ul>
+    </section>
+
+    <section id="faqs" class="faqs"> <!-- Updated class -->
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>What should I do in case of a natural disaster?</strong><br>Stay calm, seek shelter, and follow emergency guidelines.</li>
+            <li><strong>How do I reach a safe house?</strong><br>Use the emergency hotline or the system to find the nearest location.</li>
+            <li><strong>What services are provided at safe houses?</strong><br>Safe houses offer food, shelter, medical assistance, and support during emergencies.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Safe House Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="try1.js"></script>  <!-- Include your JS if necessary -->
+</body>
+</html>
