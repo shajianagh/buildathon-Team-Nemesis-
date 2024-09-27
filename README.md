@@ -7,7 +7,7 @@ This project aims to design and develop an integrated system for managing safe h
     The platform will facilitate seamless communication between hospitals and safe houses. It will allow healthcare providers to track and
     deploy necessary medical resources and personnel to safe houses based on real-time data about the needs of people taking shelter.
   
- ** 2. User Communication and Navigation:**
+  **2. User Communication and Navigation:**
     Individuals in disaster-affected areas will be able to communicate with the safe houses via the system, allowing them to request          shelter, food, or medical assistance. The system will also provide travel guidance for users to safely reach the nearest available        safe house.
   
   **3. Resource Allocation and Monitoring:**
