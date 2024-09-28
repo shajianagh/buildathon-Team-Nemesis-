@@ -29,7 +29,9 @@ This solution will improve disaster response efficiency by ensuring proper healt
 [Embed the live link of project](live_link)
 
 ## How it Works ?
-The system provides two interfaces, one for the user side and another for the operator side. The user side will give a request for his/her needs for a safe house, while the operator side will provide the middle person with all necessary information and grant the ability to manipulate the database.
+The system provides two interfaces, one for the user side and another for the operator side. The user side will give a 
+request for his/her needs for a safe house, while the operator side will provide the middle person with all necessary
+information and grant the ability to manipulate the database.
 
 ## Technologies used
 Operating System:
