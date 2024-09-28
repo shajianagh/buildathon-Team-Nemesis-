@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Safehouse Allocation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #17a2b8;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background-color: #17a2b8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .button:hover {
+            background-color: #138496;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Safehouse Allocated</h1>
+
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Safehouse Name:</strong> {{ safehouse_name or "N/A" }}</p>
+        <p><strong>Capacity Available:</strong> {{ safehouse_capacity or "N/A" }}</p>
+        <p><strong>Food Available:</strong> {{ safehouse_food or "N/A" }}</p>
+
+        {% if safehouse_medicine %}
+        <p><strong>Medicine Available:</strong> {{ safehouse_medicine or "N/A" }}</p>
+        {% endif %}
+
+        <a href="/" class="button">Go Back to Home</a>
+    </div>
+</body>
+</html>
