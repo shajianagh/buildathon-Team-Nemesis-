@@ -29,10 +29,24 @@ This solution will improve disaster response efficiency by ensuring proper healt
 [Embed the live link of project](live_link)
 
 ## How it Works ?
-Explaining the working of project  
+The system provides two interfaces, one for the user side and another for the operator side. The user side will give a request for his/her needs for a safe house, while the operator side will provide the middle person with all necessary information and grant the ability to manipulate the database.
 
 ## Technologies used
-List out tech stacks you have used
+Operating System:
+Ubuntu (Linux-based OS)
+
+Backend:
+Python (Programming Language)
+Flask (Lightweight Web Framework for Python)
+
+Database:
+PostgreSQL (Relational Database)
+
+Frontend:
+HTML/CSS/JavaScript (Static Web Technologies)
+
+Database Management Tool:
+psql (PostgreSQL Command-Line Interface for managing databases)
 
 ## Other Links
 Provide any other links ( for eg. Wireframe , UI, Abstract, Presentation )
